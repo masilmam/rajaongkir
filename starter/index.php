@@ -123,7 +123,7 @@ $provinces = $hasil_prov['rajaongkir']['results'];
 						<th scope="col">Layanan</th>
 						<th scope="col">Deskripsi</th>
 						<th scope="col">Ongkos Kirim</th>
-						<th scope="col">Estimasi (Hari)</th>
+						<th scope="col">Estimasi</th>
 					</tr>
 				</thead>
 				<tbody id="ongkir">

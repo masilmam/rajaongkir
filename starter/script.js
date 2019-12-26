@@ -1,3 +1,19 @@
+number_format = function (number, decimals, dec_point, thousands_sep) {
+	number = number.toFixed(decimals);
+
+	var nstr = number.toString();
+	nstr += '';
+	x = nstr.split('.');
+	x1 = x[0];
+	x2 = x.length > 1 ? dec_point + x[1] : '';
+	var rgx = /(\d+)(\d{3})/;
+
+	while (rgx.test(x1))
+		x1 = x1.replace(rgx, '$1' + thousands_sep + '$2');
+
+	return x1 + x2;
+}
+
 $('#provinsi_from').change(function () {
 	$('#kota_from').html('<option value="" selected>Pilih Kota/Kabupaten Asal</option>');
 
@@ -44,7 +60,7 @@ $('#provinsi_to').change(function () {
 					$('#kota_to').append(`
 								<option value="` + data.city_id + `">` + data.type + " " + data.city_name + `</option>
 							`)
-				})
+				});
 			} //end if
 		}
 	});
@@ -78,16 +94,12 @@ $('#cek-ongkir').on('click', function () {
 						<tr>
 							<td>` + data.service + `</td>
 							<td>` + data.description + `</td>
-							<td>` + data.cost[0].value + `</td>
-							<td>` + data.cost[0].etd + `</td>
+							<td>Rp` + number_format(data.cost[0].value, 0, ',', '.') + `</td>
+							<td>` + data.cost[0].etd.slice(0, -5) + ` Hari</td>
 						</tr>
 						`)
-				})
+				});
 
-				// $('#ongkir').append(`
-				// 		</tbody>
-				// 	</table>
-				// `);
 			} //end if
 		}
 	});
