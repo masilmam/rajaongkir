@@ -86,6 +86,7 @@ $('#cek-ongkir').on('click', function () {
 		success: function (response) {
 			if (response.status.code == 200) {
 				$('#table').removeClass('d-none');
+				$('#ongkir').html('');
 
 				let ongkir = response;
 
@@ -95,7 +96,7 @@ $('#cek-ongkir').on('click', function () {
 							<td>` + data.service + `</td>
 							<td>` + data.description + `</td>
 							<td>Rp` + number_format(data.cost[0].value, 0, ',', '.') + `</td>
-							<td>` + data.cost[0].etd.slice(0, -5) + ` Hari</td>
+							<td>` + data.cost[0].etd + `</td>
 						</tr>
 						`)
 				});
