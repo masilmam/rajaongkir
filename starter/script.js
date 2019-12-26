@@ -101,6 +101,15 @@ $('#cek-ongkir').on('click', function () {
 						`)
 				});
 
+			} else {
+				$('#table').removeClass('d-none');
+				$('#ongkir').html('');
+
+				$('#ongkir').append(`
+					<tr>
+						<td colspan="4" align="center">` + response.status.description + `</td>
+					</tr>
+				`);
 			} //end if
 		}
 	});
