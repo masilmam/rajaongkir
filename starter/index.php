@@ -116,6 +116,8 @@ $provinces = $hasil_prov['rajaongkir']['results'];
 			</div>
 			<input type="button" value="Cek Ongkos Kirim" id="cek-ongkir" class="btn btn-dark mt-3">
 		</form>
+		<div id="info"></div>
+		
 		<div>
 			<table class="table table-bordered mt-5 d-none" id="table">
 				<thead>

@@ -85,6 +85,12 @@ $('#cek-ongkir').on('click', function () {
 		dataType: 'json',
 		success: function (response) {
 			if (response.status.code == 200) {
+				$('#info').html('');
+				$('#info').append(`
+					<h5 class="text-center mt-5">` + response.origin_details.type + ` ` + response.origin_details.city_name + `, ` + response.origin_details.province + ` to ` + response.destination_details.type + ` ` + response.destination_details.city_name + `, ` + response.destination_details.province +
+					`<br />` + response.results[0].name + `</h5>
+				`);
+
 				$('#table').removeClass('d-none');
 				$('#ongkir').html('');
 
