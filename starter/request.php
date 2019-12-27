@@ -1,5 +1,5 @@
 <?php
-$key = "c46252e90c8e5a91b59bb5a120f78971";
+$key = 'ISI_API_KEY_ANDA';
 
 function request_get($url) {
   $key = $GLOBALS['key'];
